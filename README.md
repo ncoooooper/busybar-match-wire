@@ -16,6 +16,10 @@ python3 companion/serve.py --config config.json
 
 In the emulator, run `~/.busy-emulator/bin/busy-emulator allow-local 8770` and approve that port. Open **Apps → Match Wire → Setup**, set **Local companion URL** to `http://127.0.0.1:8770/reading`, save, then reopen the app. For a physical bar, start the companion with `--host YOUR_LAN_IP` and replace `127.0.0.1` with that address. Bind only to your trusted network. Open `/reading` on the host to inspect the current reading. Keep credentials in the host environment.
 
+## Try a match without an API key
+
+From the repository root run `python3 companion/serve.py --config companion/demo-football.json`. Turn the wheel for the clock and card. Stop the companion with Ctrl+C and run it again with `companion/demo-basketball.json` to see Ukraine–Poland at 67:62 with 04:22 left in Q3. Both games use illustrative scores and events for the demo. The rear labels them as examples.
+
 ## Follow a football match
 
 Read the two teams and score first. Turn once for the match clock. The recorded Ukraine–Poland fixture is an example at 3:2 and 78:54. The football feed usually supplies elapsed whole minutes and stoppage time. The display uses the precision the source sends.

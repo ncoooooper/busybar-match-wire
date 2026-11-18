@@ -1,5 +1,6 @@
 """Read a fixture and its events from API-SPORTS Football or Basketball."""
 import os,json
+from pathlib import Path
 from urllib.request import Request,urlopen
 from serve import page
 INTERVAL=15
@@ -12,7 +13,7 @@ def snapshot(o,m):
     football=sport=="football"
     if sport not in ["football","basketball"]:raise ValueError("Choose football or basketball")
     url="https://v3.football.api-sports.io/fixtures?id=" if football else "https://v1.basketball.api-sports.io/games?id="
-    rows=get(url+str(fid))
+    rows=json.loads(Path(o['example_file']).read_text())['response'] if o.get('example_file') else get(url+str(fid))
     if not rows:raise ValueError("No fixture returned")
     d=rows[0];st=d["fixture"]["status"] if football else d["status"]
     home,away=[d["teams"][side]["name"] for side in ("home","away")]
@@ -23,4 +24,4 @@ def snapshot(o,m):
     for event in reversed(d.get("events",[])):
         if event.get("type")=="Card":pages.append(page(event["detail"],event.get("player",{}).get("name") or "Unknown",event.get("team",{}).get("name",""),str(event["time"]["elapsed"])+"'"))
         if len(pages)>=30:break
-    return dict(state=period+" / "+sport,key=score+period+str(len(pages)),pages=pages)
+    return dict(state=("Example / " if o.get("example_file") else "")+period+" / "+sport,key=score+period+str(len(pages)),pages=pages)

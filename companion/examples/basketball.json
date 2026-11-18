@@ -1,0 +1,26 @@
+{
+  "response": [
+    {
+      "teams": {
+        "home": {
+          "name": "Ukraine"
+        },
+        "away": {
+          "name": "Poland"
+        }
+      },
+      "status": {
+        "short": "Q3",
+        "timer": "04:22"
+      },
+      "scores": {
+        "home": {
+          "total": 67
+        },
+        "away": {
+          "total": 62
+        }
+      }
+    }
+  ]
+}

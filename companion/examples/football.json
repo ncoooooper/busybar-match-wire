@@ -1,0 +1,40 @@
+{
+  "response": [
+    {
+      "teams": {
+        "home": {
+          "name": "Ukraine"
+        },
+        "away": {
+          "name": "Poland"
+        }
+      },
+      "fixture": {
+        "status": {
+          "short": "2H",
+          "elapsed": 78,
+          "clock": "78:54"
+        }
+      },
+      "goals": {
+        "home": 3,
+        "away": 2
+      },
+      "events": [
+        {
+          "type": "Card",
+          "detail": "Yellow Card",
+          "player": {
+            "name": "Example player"
+          },
+          "team": {
+            "name": "Poland"
+          },
+          "time": {
+            "elapsed": 76
+          }
+        }
+      ]
+    }
+  ]
+}
