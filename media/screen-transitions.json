@@ -1,6 +1,17 @@
 {
   "app": "busybar-match-wire",
-  "sha256": "d5e4125612486ecbf41a637aab07f8a3dcb7c7abf2e01389bb3e69be5b4a5cc3",
+  "sha256": "8af0d89e5bc1186006a4c1e745f381ff11c69ea73416c35cbffc362cd1356186",
+  "rapid_input_test": {
+    "app": "io.ncoooooper.matchwire",
+    "sha256": "8af0d89e5bc1186006a4c1e745f381ff11c69ea73416c35cbffc362cd1356186",
+    "firmware": {
+      "name": "1.3.1",
+      "commit": "8edd2da4"
+    },
+    "heap_peak_kib": 90.0,
+    "budget_kib": 128.0,
+    "exit": "finished"
+  },
   "firmware": "1.3.1",
   "cell": 16,
   "lit": 14,
