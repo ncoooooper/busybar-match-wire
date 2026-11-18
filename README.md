@@ -2,6 +2,20 @@
 
 Keep a match score on the front display. Turn the wheel for the provider’s clock, quarter or half, then the player and team for each available football card. The last reported score stays visible when the feed drops.
 
+## Screen transitions
+
+Watch Ukraine–Poland at 3:2 give way to the match clock at 78:54, then to the yellow-card report.
+
+![Match Wire front display. Watch Ukraine–Poland at 3:2 give way to the match clock at 78:54, then to the yellow-card report.](media/guide/screen-transitions.gif)
+
+<details>
+
+<summary>Watch the rear display</summary>
+
+![Match Wire rear display during the recorded controls](media/guide/screen-transitions-rear.gif)
+
+</details>
+
 ## Setup
 
 Get an API key in the API-SPORTS dashboard and enable the Football or Basketball product on your plan. Copy the example config. Set `sport` to `football` or `basketball`. Find the game in the dashboard’s Fixtures or Games explorer, then put its numeric ID in `event`. The example uses `0` as a placeholder. Set `SPORTS_KEY` in the companion’s environment. The bar checks its companion every 15 seconds. The companion asks the provider at most once a minute by default. Set `poll_seconds` to 90 or 120 on a small daily quota. Check the quota on your plan before following a full match.
@@ -40,7 +54,7 @@ Install BUSY Bar Emulator and open it. From this repository run the following co
 ~/.busy-emulator/bin/busy-emulator dev --once
 ```
 
-The recordings use example responses on emulator firmware. Each display pixel is enlarged to a 9 × 9 square.
+The recordings use example responses on emulator firmware. Each LED occupies a 16 × 16 cell with a black border.
 
 [Football fixtures](https://www.api-football.com/documentation-v3) · [Basketball games](https://api-sports.io/documentation/basketball/v1).
 
